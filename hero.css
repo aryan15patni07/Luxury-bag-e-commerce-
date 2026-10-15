@@ -1,0 +1,287 @@
+/* ==========================================================================
+   AURELLE Luxury Design System - Hero Section & Featured Collections
+   ========================================================================== */
+
+/* Cinematic Hero Section */
+.hero-section {
+  position: relative;
+  min-height: calc(100vh - var(--header-height) - var(--announcement-height));
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--color-espresso);
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  transform: scale(1.03);
+  animation: heroGentleZoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes heroGentleZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(23, 22, 20, 0.78) 0%,
+    rgba(23, 22, 20, 0.5) 45%,
+    rgba(23, 22, 20, 0.2) 100%
+  );
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(23, 22, 20, 0.4) 0%,
+      rgba(23, 22, 20, 0.82) 100%
+    );
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 680px;
+  padding: var(--space-3xl) 0;
+  color: var(--color-ivory);
+}
+
+.hero-eyebrow {
+  color: var(--color-gold-light);
+  letter-spacing: 0.26em;
+  margin-bottom: var(--space-sm);
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  font-weight: 600;
+  animation: heroFadeUp 0.8s ease backwards;
+}
+
+.hero-title {
+  color: var(--color-ivory);
+  font-size: var(--font-size-hero);
+  line-height: 1.08;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.015em;
+  font-weight: 400;
+  animation: heroFadeUp 0.8s 0.15s ease backwards;
+}
+
+.hero-description {
+  font-size: var(--font-size-md);
+  line-height: 1.7;
+  color: rgba(247, 243, 237, 0.88);
+  margin-bottom: var(--space-xl);
+  max-width: 520px;
+  animation: heroFadeUp 0.8s 0.3s ease backwards;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  animation: heroFadeUp 0.8s 0.45s ease backwards;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hallmarks Banner */
+.hero-hallmarks {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  background-color: rgba(30, 21, 18, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(247, 243, 237, 0.1);
+  color: var(--color-ivory);
+  padding: var(--space-md) 0;
+}
+
+.hallmarks-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .hallmarks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .hallmarks-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.hallmark-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hallmark-icon {
+  color: var(--color-gold-light);
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.hallmark-text strong {
+  display: block;
+  font-weight: 600;
+  color: var(--color-ivory);
+}
+
+.hallmark-text span {
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+/* ==========================================================================
+   Featured Collections Cards
+   ========================================================================== */
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+@media (max-width: 960px) {
+  .collections-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}
+
+.collection-card {
+  position: relative;
+  background-color: var(--color-ivory-surface);
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+  border: 1px solid var(--color-border-subtle);
+  cursor: pointer;
+}
+
+.collection-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+}
+
+.collection-image-wrap {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background-color: var(--color-ivory-warm);
+}
+
+.collection-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.collection-card:hover .collection-image-wrap img {
+  transform: scale(1.06);
+}
+
+.collection-card-body {
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  background-color: var(--color-ivory-elevated);
+}
+
+.collection-card-title {
+  font-size: 1.5rem;
+  font-family: var(--font-serif);
+  color: var(--color-espresso);
+  font-weight: 400;
+}
+
+.collection-card-desc {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-2xs);
+}
+
+.collection-link {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  color: var(--color-cognac);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  position: relative;
+}
+
+.collection-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-cognac);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-medium);
+}
+
+.collection-card:hover .collection-link::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}

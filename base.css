@@ -1,0 +1,389 @@
+/* ==========================================================================
+   AURELLE Luxury Design System - Base, Reset, Typography & Shared Elements
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-ivory);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+::selection {
+  background-color: var(--color-espresso);
+  color: var(--color-ivory);
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ==========================================================================
+   Typography Hierarchy
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-espresso);
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-weight: 600;
+  color: var(--color-cognac);
+  margin-bottom: var(--space-xs);
+  display: inline-block;
+}
+
+.editorial-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+}
+
+p.lead {
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   Layout Containers
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.section-spacing {
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+}
+
+@media (max-width: 768px) {
+  .section-spacing {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+  }
+}
+
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--space-3xl);
+}
+
+.section-header .section-title {
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-sm);
+}
+
+.section-header .section-description {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+}
+
+/* ==========================================================================
+   Buttons - Refined Luxury Rectangular
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 0.95rem 2.25rem;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-medium);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.btn-primary {
+  background-color: var(--color-espresso);
+  color: var(--color-ivory);
+  border: 1px solid var(--color-espresso);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-cognac);
+  border-color: var(--color-cognac);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(48, 34, 29, 0.2);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-espresso);
+  border: 1px solid var(--color-espresso);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-espresso);
+  color: var(--color-ivory);
+  transform: translateY(-2px);
+}
+
+.btn-outline-light {
+  background-color: transparent;
+  color: var(--color-ivory);
+  border: 1px solid rgba(247, 243, 237, 0.45);
+  backdrop-filter: blur(8px);
+}
+
+.btn-outline-light:hover {
+  background-color: var(--color-ivory);
+  color: var(--color-espresso);
+  border-color: var(--color-ivory);
+  transform: translateY(-2px);
+}
+
+.btn-text {
+  padding: 0;
+  background: transparent;
+  color: var(--color-espresso);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.btn-text::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-espresso);
+  transition: transform var(--transition-fast);
+  transform-origin: right;
+  transform: scaleX(1);
+}
+
+.btn-text:hover::after {
+  transform-origin: left;
+  transform: scaleX(0.7);
+}
+
+.btn-icon {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-fast);
+}
+
+.btn-icon:hover {
+  background-color: rgba(48, 34, 29, 0.06);
+}
+
+/* ==========================================================================
+   Badges, Pills & Labels
+   ========================================================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  border-radius: var(--radius-xs);
+  line-height: 1;
+}
+
+.badge-gold {
+  background-color: rgba(182, 154, 101, 0.15);
+  color: #7A5F26;
+  border: 1px solid rgba(182, 154, 101, 0.35);
+}
+
+.badge-dark {
+  background-color: var(--color-espresso);
+  color: var(--color-ivory);
+}
+
+.badge-cognac {
+  background-color: var(--color-cognac);
+  color: #FFFFFF;
+}
+
+.badge-outline {
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+/* ==========================================================================
+   Inputs & Form Elements
+   ========================================================================== */
+
+.form-group {
+  margin-bottom: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.form-label {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: var(--font-size-base);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-ivory-elevated);
+  border-radius: var(--radius-xs);
+  color: var(--color-text-primary);
+  transition: all var(--transition-fast);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--color-espresso);
+  box-shadow: 0 0 0 3px rgba(48, 34, 29, 0.08);
+}
+
+/* ==========================================================================
+   Toast Notifications
+   ========================================================================== */
+
+.toast-container {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  pointer-events: none;
+}
+
+.toast {
+  background-color: var(--color-espresso);
+  color: var(--color-ivory);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-xs);
+  font-size: var(--font-size-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  box-shadow: var(--shadow-modal);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all var(--transition-medium);
+  pointer-events: auto;
+  border-left: 3px solid var(--color-gold);
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Page View Routing Controls */
+.view-container {
+  display: none;
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+}
+
+.view-container.active {
+  display: block;
+  opacity: 1;
+}

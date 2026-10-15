@@ -1,0 +1,11 @@
+{
+  "name": "aurelle-luxury-leather",
+  "version": "1.0.0",
+  "description": "AURELLE — Luxury Leather Goods E-Commerce Experience",
+  "type": "module",
+  "scripts": {
+    "start": "python -m http.server 8080"
+  },
+  "author": "AURELLE Creative Atelier",
+  "license": "UNLICENSED"
+}

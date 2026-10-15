@@ -1,0 +1,103 @@
+/* ==========================================================================
+   AURELLE Luxury Design System - Tokens & Custom Properties
+   ========================================================================== */
+
+:root {
+  /* Brand Palette */
+  --color-ivory: #F7F3ED;
+  --color-ivory-surface: #FAF8F5;
+  --color-ivory-warm: #F2ECE3;
+  --color-ivory-elevated: #FFFFFF;
+  
+  --color-espresso: #30221D;
+  --color-espresso-deep: #1E1512;
+  --color-espresso-subtle: #45342C;
+
+  --color-cognac: #A66A43;
+  --color-cognac-hover: #8D5430;
+  --color-cognac-light: #C28B65;
+
+  --color-beige: #E7D9C8;
+  --color-beige-light: #F0E6D9;
+  --color-beige-border: #D8C7B2;
+
+  --color-gold: #B69A65;
+  --color-gold-light: #D4BE92;
+  --color-gold-metallic: linear-gradient(135deg, #CBB482 0%, #A3844D 100%);
+
+  --color-black: #171614;
+  --color-text-primary: #171614;
+  --color-text-secondary: #5C524B;
+  --color-text-muted: #827871;
+  --color-text-inverse: #F7F3ED;
+
+  --color-border: rgba(48, 34, 29, 0.14);
+  --color-border-subtle: rgba(48, 34, 29, 0.08);
+  --color-border-focus: #30221D;
+
+  --color-success: #3E5A44;
+  --color-success-bg: #EFF5F0;
+  --color-error: #9E3A3A;
+  --color-error-bg: #FAF0F0;
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Garamond, 'Times New Roman', serif;
+  --font-display: 'Italiana', 'Cormorant Garamond', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-accent: 'Cinzel', serif;
+
+  /* Font Scales */
+  --font-size-xs: 0.75rem;     /* 12px */
+  --font-size-sm: 0.84rem;     /* 13.5px */
+  --font-size-base: 0.95rem;   /* 15.2px */
+  --font-size-md: 1.05rem;     /* 16.8px */
+  --font-size-lg: 1.25rem;     /* 20px */
+  --font-size-xl: 1.6rem;      /* 25.6px */
+  --font-size-2xl: 2.1rem;     /* 33.6px */
+  --font-size-3xl: 2.75rem;    /* 44px */
+  --font-size-4xl: 3.75rem;    /* 60px */
+  --font-size-hero: clamp(2.5rem, 5.5vw, 4.5rem);
+
+  /* Spacing */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4.5rem;
+  --space-4xl: 6.5rem;
+
+  /* Layout */
+  --container-max: 1440px;
+  --container-padding: clamp(1.25rem, 4vw, 3.5rem);
+  --header-height: 80px;
+  --announcement-height: 38px;
+
+  /* Elevation & Shadows */
+  --shadow-subtle: 0 4px 20px rgba(23, 22, 20, 0.04);
+  --shadow-card: 0 10px 30px rgba(23, 22, 20, 0.06);
+  --shadow-drawer: -10px 0 40px rgba(23, 22, 20, 0.15);
+  --shadow-modal: 0 25px 50px -12px rgba(23, 22, 20, 0.25);
+
+  /* Motion & Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-medium: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Borders & Radius - Quiet Luxury (Refined, architectural, minimal) */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-pill: 9999px;
+
+  /* Z-Index Hierarchy */
+  --z-base: 1;
+  --z-sticky: 100;
+  --z-overlay: 500;
+  --z-drawer: 600;
+  --z-modal: 700;
+  --z-toast: 800;
+}
